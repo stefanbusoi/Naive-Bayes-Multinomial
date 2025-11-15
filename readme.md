@@ -14,15 +14,13 @@ text și genurile asociate fiecărui joc.
 ## 2. Modelul Folosit: Naive Bayes Multinomial
 
 Modelul Naive Bayes clasifică un text nou pe baza următoarei formule:
+```math
+ P(C_k | x) = P(C_k) \prod_{i=1}^{n} \frac{P(x_i)}{P(x_i | C_k)} 
+```
+unde: ```P(C_k)``` este o categorie (ex: Action, RPG), ```x``` sunt cuvintele
+din text, ```P(C_k)``` este probabilitatea a priori a categoriei, ```(P(x_i|C_k))``` este probabilitatea apariției cuvântului în categoria respectivă.
 
-\[ P(C_k \| X) = P(C_k) `\prod`{=tex}\_{i=1}\^n P(x_i \| C_k) \]
-
-unde: - (C_k) este o categorie (ex: Action, RPG), - (x_i) sunt cuvintele
-din text, - (P(C_k)) este probabilitatea a priori a categoriei, - (P(x_i
-\| C_k)) este probabilitatea apariției cuvântului în categoria
-respectivă.
-
-Pentru stabilitate numerică, se folosesc log-probabilități.
+Pentru stabilitate numerică, se face calculul logaritmat
 
 ------------------------------------------------------------------------
 
@@ -64,16 +62,15 @@ Positive, False Negative - corectitudinea totală (accuracy) -
 corectitudine per gen
 
 Formula pentru acuratețe:
-
-\[ Accuracy = `\frac{TP + TN}{TP + TN + FP + FN}`{=tex} \]
-
+```math
+Accuracy = \frac{TP + TN}{TP + TN + FP + FN} 
+```
 ------------------------------------------------------------------------
 
 ## 6. Instrucțiuni de Utilizare
 
-1.  Rulați scriptul Python.
-2.  Alegeți dacă doriți să introduceți manual un text sau să rulați
-    direct testarea.
+1.  Rulați scriptul ```program.py```
+2.  Alegeți dacă doriți să introduceți manual un text sau să rulați testarea.
 3.  Programul afișează:
     -   genurile prezise,
     -   acuratețea pe setul de test,
@@ -84,6 +81,4 @@ Formula pentru acuratețe:
 ## 7. Referințe
 
 -   Wikipedia: *Naive Bayes Classifier*
--   Manning, Raghavan, Schütze -- *Introduction to Information
-    Retrieval*
 -   Documentația Python Pandas și NumPy
