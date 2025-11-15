@@ -15,9 +15,15 @@ text și genurile asociate fiecărui joc.
 
 Modelul Naive Bayes clasifică un text nou pe baza următoarei formule:
 ```math
+<<<<<<< Updated upstream
  P(C_k | x) = P(C_k) \prod_{i=1}^{n} \frac{P(x_i)}{P(x_i | C_k)} 
 ```
 unde: ```P(C_k)``` este o categorie (ex: Action, RPG), ```x``` sunt cuvintele
+=======
+ P(C_k | X) = P(C_k) \prod_{x\in X} \frac{P(x)}{P(x_i | C_k)} 
+```
+unde: ```P(C_k)``` este o categorie (ex: Action, RPG), ```X``` e multimea cuvintelor
+>>>>>>> Stashed changes
 din text, ```P(C_k)``` este probabilitatea a priori a categoriei, ```(P(x_i|C_k))``` este probabilitatea apariției cuvântului în categoria respectivă.
 
 Pentru stabilitate numerică, se face calculul logaritmat
